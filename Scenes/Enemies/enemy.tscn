@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/enemy.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Fiender/SurJordboll.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="enemy" type="KinematicBody2D" index="0" groups=[
+"enemies",
+]]
+
+position = Vector2( 304, 272 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+input_pickable = false
+collision_layer = 1
+collision_mask = 1025
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+rotation = -6.28319
+scale = Vector2( 0.17, 0.17 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Detect_floor_left" type="RayCast2D" parent="." index="2"]
+
+position = Vector2( -40, 0 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
+
+[node name="Detect_floor_right" type="RayCast2D" parent="." index="3"]
+
+position = Vector2( 42, 0 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
+
+[node name="Detect_wall_left" type="RayCast2D" parent="." index="4"]
+
+rotation = 1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="Detect_wall_right" type="RayCast2D" parent="." index="5"]
+
+rotation = -1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+

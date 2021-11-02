@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Enemies/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/EvilDirt.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "rollingR"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 359.9 ]
+}
+
+[node name="EvilDirt" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+
+rotation = 6.28144
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Detect_wall_left" parent="." index="4"]
+
+position = Vector2( 3.07986, 1.11491e-05 )
+scale = Vector2( 1, 0.903754 )
+
+[node name="Detect_wall_right" parent="." index="5"]
+
+position = Vector2( -2.16071, 7.82173e-06 )
+scale = Vector2( 1, 0.932478 )
+
+[node name="rolling" type="AnimationPlayer" parent="." index="6"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/rollingR = SubResource( 1 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+

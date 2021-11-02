@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smak.wav-28617585f6aea57ff3a603add7e96afc.sample"
+
+[deps]
+
+source_file="res://Sounds/smak.wav"
+source_md5="1f3348eae72f6a1be7fa684598f4ad68"
+
+dest_files=[ "res://.import/smak.wav-28617585f6aea57ff3a603add7e96afc.sample" ]
+dest_md5="e7116bbb94cd83866a1825827268aa86"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

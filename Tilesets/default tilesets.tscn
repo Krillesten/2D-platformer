@@ -1,0 +1,545 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Sprites/Placeholding sprites/block_red.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/GrassDirt/Grass1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/GrassDirt/Dirt1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Placeholding sprites/block_grey.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/GrassDirt/Dirt1_Big.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/GrassDirt/Grass2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/GrassDirt/Grass2_Dark.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/GrassDirt/Ground1_Dark.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/GrassDirt/Dirt2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/GrassDirt/Dirt2_Dark.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/GrassDirt/Grass1_corner_left.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/GrassDirt/Grass2_corner_left.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/GrassDirt/Grass2_corner_left_Dark.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/GrassDirt/Gound1_left_Dark.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/GrassDirt/Grass1_corner_right.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/GrassDirt/Grass2_corner_right.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/GrassDirt/Grass2_corner_right_Dark.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/GrassDirt/Gound1_right_Dark.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/GrassDirt/Dirt1_sky.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/GrassDirt/Dirt2_sky.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/GrassDirt/Dirt2_sky_Dark.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Växter/träd alt1.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Bakgrunder/moln.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Växter/Gran.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Växter/trästock2.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Växter/trästock1.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Växter/Stubbe.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Växter/Blommor.png" type="Texture" id=28]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 8 )
+
+[node name="Tileset" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 451, 29 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="test2" type="StaticBody2D" parent="Sprite" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/test2" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 213, 32 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass" index="0"]
+
+scale = Vector2( 2, 2 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass/StaticBody2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="ground" type="Sprite" parent="." index="2"]
+
+position = Vector2( 215, 89 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="wall" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 10, 10 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="static" type="StaticBody2D" parent="wall" index="0"]
+
+editor/display_folded = true
+scale = Vector2( 2, 2 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/static" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="ground_big" type="Sprite" parent="." index="4"]
+
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="grass2" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 100, 154 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass2/StaticBody2D" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="grass3" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 356.081, 158.644 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass3/StaticBody2D" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="grass4" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 442.326, 395.485 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass4/StaticBody2D" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="ground2" type="Sprite" parent="." index="8"]
+
+position = Vector2( 100, 200 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ground3" type="Sprite" parent="." index="9"]
+
+position = Vector2( 356.081, 204.644 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="grass_left" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 151, 32 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_left" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_left/StaticBody2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="grass_left2" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+position = Vector2( 49, 155 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_left2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_left2/StaticBody2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="grass_left3" type="Sprite" parent="." index="12"]
+
+editor/display_folded = true
+position = Vector2( 305.081, 159.644 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_left3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_left3/StaticBody2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="grass_left4" type="Sprite" parent="." index="13"]
+
+editor/display_folded = true
+position = Vector2( 391.989, 396.485 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_left4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_left4/StaticBody2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="grass_right" type="Sprite" parent="." index="14"]
+
+editor/display_folded = true
+position = Vector2( 282, 36 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_right" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_right/StaticBody2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="grass_right2" type="Sprite" parent="." index="15"]
+
+editor/display_folded = true
+position = Vector2( 148, 154 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_right2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_right2/StaticBody2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="grass_right3" type="Sprite" parent="." index="16"]
+
+editor/display_folded = true
+position = Vector2( 404.081, 158.644 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_right3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_right3/StaticBody2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="grass_right4" type="Sprite" parent="." index="17"]
+
+editor/display_folded = true
+position = Vector2( 490.326, 395.485 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_right4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_right4/StaticBody2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="ground_sky" type="Sprite" parent="." index="18"]
+
+editor/display_folded = true
+position = Vector2( 215, 133 )
+texture = ExtResource( 19 )
+flip_h = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground_sky" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground_sky/StaticBody2D" index="0"]
+
+position = Vector2( 0, -8 )
+shape = SubResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ground_sky2" type="Sprite" parent="." index="19"]
+
+editor/display_folded = true
+position = Vector2( 102, 250 )
+texture = ExtResource( 20 )
+flip_h = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground_sky2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground_sky2/StaticBody2D" index="0"]
+
+position = Vector2( 0, -8 )
+shape = SubResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ground_sky3" type="Sprite" parent="." index="20"]
+
+editor/display_folded = true
+position = Vector2( 358.081, 254.644 )
+texture = ExtResource( 21 )
+flip_h = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground_sky3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground_sky3/StaticBody2D" index="0"]
+
+position = Vector2( 0, -8 )
+shape = SubResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree" type="Sprite" parent="." index="21"]
+
+position = Vector2( 576.623, 145.45 )
+texture = ExtResource( 22 )
+
+[node name="cloud" type="Sprite" parent="." index="22"]
+
+position = Vector2( 199.452, 383.562 )
+texture = ExtResource( 23 )
+
+[node name="Gran" type="Sprite" parent="." index="23"]
+
+position = Vector2( 1189, 229 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="trästock2" type="Sprite" parent="." index="24"]
+
+position = Vector2( 869.565, 320.28 )
+rotation = 1.5708
+texture = ExtResource( 25 )
+
+[node name="trästock1" type="Sprite" parent="." index="25"]
+
+position = Vector2( 865, 222 )
+rotation = 1.5708
+texture = ExtResource( 26 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stubbe" type="Sprite" parent="." index="26"]
+
+position = Vector2( 690, 323 )
+texture = ExtResource( 27 )
+
+[node name="Blommor" type="Sprite" parent="Stubbe" index="0"]
+
+position = Vector2( -204, 11 )
+texture = ExtResource( 28 )
+
+

@@ -1,0 +1,4 @@
+OpenGL ES 3.0 Renderer: GeForce GTX 750 Ti/PCIe/SSE2
+GLES3: max ubo light: 409
+GLES3: max ubo reflections: 455, ubo size: 144
+Registered interface Native mobile

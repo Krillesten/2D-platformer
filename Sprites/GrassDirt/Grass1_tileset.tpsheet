@@ -1,0 +1,93 @@
+{
+	"textures": [
+		{
+			"image": "Grass1_spritesheet.png",
+			"size": {
+				"w": 36,
+				"h": 163
+			},
+			"sprites": [
+				{
+					"filename": "Dirt1.png",
+					"region": {
+						"x": 2,
+						"y": 2,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Grass1.png",
+					"region": {
+						"x": 2,
+						"y": 36,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Grass1_corner_left.png",
+					"region": {
+						"x": 2,
+						"y": 70,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Grass1_corner_right.png",
+					"region": {
+						"x": 2,
+						"y": 104,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Dirt1_sky.png",
+					"region": {
+						"x": 2,
+						"y": 138,
+						"w": 32,
+						"h": 23
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 9
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:d33c07c0eabd1626b24d96a9c6830d63:3669cfd1e5a841c0523eb8d0395f9279:c3099a473bbf0a8319372c82802b48f2$"
+	}
+}

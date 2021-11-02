@@ -1,0 +1,93 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Karaktär/Spelare_Idle1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Karaktär/Spelare_Idle2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Karaktär/Spelare_Idle3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Karaktär/Run/Spelare_Run1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Karaktär/Run/Spelare_Run2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Karaktär/Run/Spelare_Run3.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Karaktär/Run/Spelare_Run4.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Karaktär/Run/Spelare_Run5.png" type="Texture" id=9]
+[ext_resource path="res://Sounds/Footstep2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/Select2.wav" type="AudioStream" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 12.7052
+height = 50.3851
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16.3608, 32.5182 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 17.5074, 3.92102 )
+
+[node name="player" type="KinematicBody2D" groups=[
+"Player",
+]]
+z_index = 5
+input_pickable = true
+script = ExtResource( 1 )
+GRAVITY = 35
+ACCELERATION = 60
+MAX_SPEED = 350
+JUMP_HEIGHT = -750
+
+[node name="anim" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2( -2.95577, 5.91154 )
+shape = SubResource( 2 )
+
+[node name="collide_enemy" type="Area2D" parent="."]
+position = Vector2( -3, 4 )
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collide_enemy"]
+scale = Vector2( 1.14502, 1 )
+shape = SubResource( 3 )
+
+[node name="kill_enemy" type="Area2D" parent="."]
+position = Vector2( -2.9978, 43 )
+
+[node name="collide" type="CollisionShape2D" parent="kill_enemy"]
+position = Vector2( 2.38419e-07, -1.67065 )
+shape = SubResource( 4 )
+
+[node name="footsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+
+[node name="pickable" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0.17482, 0.349648 )
+stream = ExtResource( 11 )
+
+[node name="hit_enemie" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0.17482, 0.349648 )
+stream = ExtResource( 11 )
+
+[node name="camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_bottom = 800
+smoothing_speed = 20.0
+
+[connection signal="area_entered" from="collide_enemy" to="." method="_on_collide_enemy_area_enter"]
+[connection signal="body_entered" from="collide_enemy" to="." method="_on_collide_enemy_body_enter"]
+[connection signal="body_entered" from="kill_enemy" to="." method="_on_kill_enemy_body_enter"]

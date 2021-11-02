@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/189640__yuval__grass-loop-short.wav-0958b93b7022e3233655e1d83a5a097f.sample"
+
+[deps]
+
+source_file="res://Sounds/189640__yuval__grass-loop-short.wav"
+source_md5="e9a4831b774497b2a8398b07bfcd78db"
+
+dest_files=[ "res://.import/189640__yuval__grass-loop-short.wav-0958b93b7022e3233655e1d83a5a097f.sample" ]
+dest_md5="b6316fe1c919d0367e3fd031df0a0852"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
